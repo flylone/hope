@@ -1,6 +1,8 @@
 buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/#view-repositories;public~browsestorage' }
+        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/jcenter/' }
+        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/thirdparty/' }
     }
     dependencies {
         classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
@@ -41,6 +43,8 @@ allprojects {
 
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/#view-repositories;public~browsestorage' }
+        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/jcenter/' }
+        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/thirdparty/' }
     }
 
     dependencyManagement {

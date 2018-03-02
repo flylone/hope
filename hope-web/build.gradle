@@ -1,0 +1,18 @@
+description = 'hope-web'
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(':hope-domain:hope-domain-model')
+    compile project(':hope-domain:hope-domain-biz')
+    compile project(':hope-service')
+    compile 'org.springframework.boot:spring-boot-starter-velocity'
+    compile 'io.springfox:springfox-swagger2'
+    compile 'io.springfox:springfox-swagger-ui'
+    compile 'commons-fileupload:commons-fileupload'
+    compile 'org.springframework:springloaded'
+}
+
+springBoot {
+    executable = true
+}
