@@ -1,0 +1,31 @@
+# Eclipse
+.classpath
+.project
+.settings
+
+### Intellij ###
+*.ipr
+*.iml
+*.iws
+.idea
+.idea_modules
+out
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.class
+
+# Mac
+.DS_Store
+
+### Gradle ###
+.gradle/
+build/
+**/build/
+
+# Runtime
+**/logs/
+**/catalina.base_IS_UNDEFINED/
+classes/
