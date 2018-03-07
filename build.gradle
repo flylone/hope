@@ -1,13 +1,14 @@
 buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/#view-repositories;public~browsestorage' }
-        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/jcenter/' }
-        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/thirdparty/' }
+        maven { url "http://maven.springframework.org/release" }
+        maven { url "http://maven.restlet.org" }
+        mavenCentral()
     }
     dependencies {
         classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
         classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
-        classpath 'org.hidetake:gradle-ssh-plugin:2.6.0'
+//        classpath 'org.hidetake:gradle-ssh-plugin:2.6.0'
         classpath 'net.nisgits.gradle:gradle-executable-jar-plugin:+'
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.4.7.RELEASE"
         classpath 'org.springframework:springloaded:+'
@@ -43,8 +44,10 @@ allprojects {
 
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/#view-repositories;public~browsestorage' }
-        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/jcenter/' }
-        maven { url 'http://10.0.1.176:9081/nexus/content/repositories/thirdparty/' }
+        maven { url "http://maven.springframework.org/release" }
+        maven { url "http://maven.restlet.org" }
+        mavenCentral()
+        maven { url 'http://maven.aliyun.com/nexus/#view-repositories;public~browsestorage' }
     }
 
     dependencyManagement {

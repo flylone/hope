@@ -9,7 +9,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(ModelMap map) {
-        map.put("world", "world");
+        map.put("world", "world9");
         return "home/index";
     }
 }
