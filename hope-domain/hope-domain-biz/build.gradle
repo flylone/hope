@@ -1,0 +1,3 @@
+dependencies {
+    compile project(':hope-domain:hope-domain-model')
+}
