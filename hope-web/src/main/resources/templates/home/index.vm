@@ -1,1 +1,9 @@
 hello $!{world}!
+
+<div>
+    <form action="" method="post">
+        <label for="name">name:</label><input type="text" name="name" id="name"><br>
+        <label for="pwd">pwd:</label><input type="text" name="pwd" id="pwd"><br>
+        <input type="submit" value="提交">
+    </form>
+</div>

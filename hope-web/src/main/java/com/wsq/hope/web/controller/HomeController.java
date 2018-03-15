@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping("/")
-    public String home(ModelMap map) {
+    public String home(ModelMap map,String user) {
         map.put("world", "world9");
         return "home/index";
     }
