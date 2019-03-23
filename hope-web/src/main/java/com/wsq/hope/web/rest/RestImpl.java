@@ -5,8 +5,11 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.Setter;
 import org.apache.commons.collections.MapUtils;
 import org.springframework.http.*;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -25,7 +28,26 @@ public class RestImpl implements IRest {
     private Object body;
 
     public RestImpl(RestTemplate restTemplate) {
+        reInitMessageConverter(restTemplate);
         this.restTemplate = restTemplate;
+    }
+
+    //修复乱码问题
+    private void reInitMessageConverter(RestTemplate restTemplate){
+        List<HttpMessageConverter<?>> converterList=restTemplate.getMessageConverters();
+        HttpMessageConverter<?> converterTarget = null;
+        for (HttpMessageConverter<?> item : converterList) {
+            if (item.getClass() == StringHttpMessageConverter.class) {
+                converterTarget = item;
+                break;
+            }
+        }
+
+        if (converterTarget != null) {
+            converterList.remove(converterTarget);
+        }
+        HttpMessageConverter<?> converter = new StringHttpMessageConverter(StandardCharsets.UTF_8);
+        converterList.add(converter);
     }
 
     @Override
